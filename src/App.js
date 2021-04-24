@@ -11,7 +11,6 @@ function App() {
     db.onSnapshot((snapshot) => {
       const data = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
       setWords(data.sort((a, b) => Number(a.id) - Number(b.id)));
-      console.log('data', data)
     })
   }, []);
 
